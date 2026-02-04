@@ -110,17 +110,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-card rounded-2xl overflow-hidden border border-border h-64">
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                  <p className="text-muted-foreground">
-                    Mappa interattiva disponibile presto
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
