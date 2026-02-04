@@ -7,7 +7,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
     { label: "Servizi", href: "#servizi" },
     { label: "Chi Siamo", href: "#chi-siamo" },
     { label: "Team", href: "#team" },
@@ -20,13 +19,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="DUO FIDE Logo" className="h-14 w-auto" />
-            <div className="hidden sm:block">
-              <span className="font-display font-bold text-xl text-foreground">
+          <a href="#home" className="flex items-center gap-2 md:gap-3">
+            <img src={logo} alt="DUO FIDE Logo" className="h-12 md:h-14 w-auto flex-shrink-0" />
+            <div className="hidden sm:flex flex-col min-w-0">
+              <span className="font-display font-bold text-lg md:text-xl text-foreground whitespace-nowrap">
                 DUO FIDE
               </span>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted-foreground whitespace-nowrap">
                 Associazione Cinologica
               </p>
             </div>
