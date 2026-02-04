@@ -41,10 +41,12 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="gap-2">
-              <Phone className="h-4 w-4" />
-              Chiamaci
-            </Button>
+            <a href="tel:+39061234567">
+              <Button className="gap-2">
+                <Phone className="h-4 w-4" />
+                Chiamaci
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -71,10 +73,12 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="gap-2 w-full mt-2">
-                <Phone className="h-4 w-4" />
-                Chiamaci
-              </Button>
+              <a href="tel:+39061234567">
+                <Button className="gap-2 w-full mt-2">
+                  <Phone className="h-4 w-4" />
+                  Chiamaci
+                </Button>
+              </a>
             </div>
           </nav>
         )}

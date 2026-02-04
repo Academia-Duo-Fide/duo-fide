@@ -37,13 +37,15 @@ const Hero = () => {
               Scopri i Corsi
               <ArrowRight className="h-5 w-5" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="gap-2 text-lg px-8 border-2"
-            >
-              Contattaci
-            </Button>
+            <a href="#contatti">
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 text-lg px-8 border-2"
+              >
+                Contattaci
+              </Button>
+            </a>
           </div>
         </div>
       </div>
