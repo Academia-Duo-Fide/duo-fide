@@ -16,23 +16,6 @@ const teamMembers = [{
   description: "Specializzato in discipline sportive cinofile e preparazione atletica."
 }];
 const Team = () => {
-  return <section id="team" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
-            Il Nostro Team
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Professionisti Appassionati
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Un team di esperti dedicati al benessere del tuo cane e alla
-            costruzione di un rapporto armonioso.
-          </p>
-        </div>
-
-        
-      </div>
-    </section>;
+  return;
 };
 export default Team;
