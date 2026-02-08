@@ -1,28 +1,561 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUO FIDE - Associazione Cinologica | Educazione e Addestramento Cani</title>
-    <meta name="description" content="Centro cinofilo DUO FIDE a Roma: educazione, addestramento e consulenza per cani. Educare per aiutare, aiutare per educare." />
-    <meta name="author" content="DUO FIDE" />
+    <meta name="description" content="Centro cinofilo DUO FIDE a Roma: educazione, addestramento e consulenza per cani. Educare per aiutare, aiutare per educare.">
+    <meta name="author" content="DUO FIDE">
 
-    <meta property="og:title" content="DUO FIDE - Associazione Cinologica" />
-    <meta property="og:description" content="Centro cinofilo a Roma: educazione, addestramento e consulenza per cani. Oltre 10 anni di esperienza." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:title" content="DUO FIDE - Associazione Cinologica">
+    <meta property="og:description" content="Centro cinofilo a Roma: educazione, addestramento e consulenza per cani. Oltre 10 anni di esperienza.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@DuoFide" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@DuoFide">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
 
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  </head>
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <link rel="icon" href="public/favicon.ico">
+</head>
+<body>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header-fixed">
+        <div class="container">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3" href="#home">
+                    <img src="assets/logo-duofide.png" alt="DUO FIDE Logo" class="logo-img">
+                    <div class="brand-text d-none d-sm-flex flex-column">
+                        <span class="brand-name">DUO FIDE</span>
+                        <span class="brand-subtitle">Associazione Cinologica</span>
+                    </div>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-md-center gap-md-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servizi">Servizi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#chi-siamo">Chi Siamo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonianze">Testimonianze</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contatti">Contatti</a>
+                        </li>
+                        <li class="nav-item mt-3 mt-md-0">
+                            <a href="tel:+39061234567" class="btn btn-primary d-flex align-items-center gap-2">
+                                <i class="bi bi-telephone"></i>
+                                Chiamaci
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==================== HERO ==================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg">
+                <img src="assets/hero-dog.jpg" alt="Cane felice in un prato">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container position-relative">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Il Tuo Partner per
+                        <span class="text-primary">l'Educazione Cinofila</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Da oltre 10 anni aiutiamo proprietari e cani a costruire una
+                        relazione basata sulla fiducia, il rispetto e la comunicazione.
+                        Scopri i nostri corsi personalizzati.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#servizi" class="btn btn-primary btn-lg shadow-brand">
+                            Scopri i Corsi
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#contatti" class="btn btn-outline-dark btn-lg">
+                            Contattaci
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SERVIZI ==================== -->
+        <section id="servizi" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="badge-label">I Nostri Servizi</span>
+                    <h2 class="section-title">Soluzioni per Ogni Esigenza</h2>
+                    <p class="section-subtitle">
+                        Offriamo una gamma completa di servizi per l'educazione e il
+                        benessere del tuo cane, personalizzati in base alle tue necessità.
+                    </p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Servizio 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-primary-light">
+                                <i class="bi bi-mortarboard text-primary"></i>
+                            </div>
+                            <h3 class="service-title">Educazione Base</h3>
+                            <p class="service-description">
+                                Corso fondamentale per cuccioli e cani adulti. Insegniamo i comandi essenziali e le basi della convivenza.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servizio 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-primary-light">
+                                <i class="bi bi-award text-primary"></i>
+                            </div>
+                            <h3 class="service-title">Addestramento Avanzato</h3>
+                            <p class="service-description">
+                                Per chi vuole approfondire e raggiungere livelli superiori di obbedienza e collaborazione.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servizio 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-accent-light">
+                                <i class="bi bi-heart text-accent"></i>
+                            </div>
+                            <h3 class="service-title">Problemi Comportamentali</h3>
+                            <p class="service-description">
+                                Aiutiamo a risolvere aggressività, paure, ansia da separazione e altri comportamenti problematici.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servizio 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-primary-light">
+                                <i class="bi bi-people text-primary"></i>
+                            </div>
+                            <h3 class="service-title">Classi di Socializzazione</h3>
+                            <p class="service-description">
+                                Sessioni di gruppo per insegnare al tuo cane a interagire correttamente con altri cani e persone.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servizio 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-primary-light">
+                                <i class="bi bi-emoji-smile text-primary"></i>
+                            </div>
+                            <h3 class="service-title">Puppy Class</h3>
+                            <p class="service-description">
+                                Corso dedicato ai cuccioli dai 2 ai 6 mesi per un'educazione precoce e una corretta socializzazione.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Servizio 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon bg-accent-light">
+                                <i class="bi bi-house-door text-accent"></i>
+                            </div>
+                            <h3 class="service-title">Consulenza a Domicilio</h3>
+                            <p class="service-description">
+                                Valutiamo e interveniamo direttamente nel tuo ambiente domestico per risultati più efficaci.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CHI SIAMO ==================== -->
+        <section id="chi-siamo" class="section-padding">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left Content -->
+                    <div class="col-lg-6">
+                        <span class="badge-label">Chi Siamo</span>
+                        <h2 class="section-title text-start mb-4">
+                            Passione e Competenza al Servizio del
+                            <span class="text-primary">Tuo Cane</span>
+                        </h2>
+                        <p class="text-muted mb-4">
+                            DUO FIDE nasce dalla passione per il mondo cinofilo e dalla
+                            volontà di creare un ponte tra cani e proprietari. Il nostro motto
+                            "Educare per Aiutare, Aiutare per Educare" riflette la nostra
+                            filosofia: ogni intervento educativo è un aiuto reciproco.
+                        </p>
+                        <p class="text-muted mb-5">
+                            Utilizziamo metodi basati sul rinforzo positivo, rispettando
+                            sempre l'individualità di ogni cane e costruendo relazioni basate
+                            sulla fiducia e il rispetto reciproco.
+                        </p>
+                        
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Educatori certificati ENCI e CSEN</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Approccio basato sul rinforzo positivo</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Programmi personalizzati</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Supporto continuo post-corso</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Ambiente sicuro e attrezzato</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill text-primary"></i>
+                                    <span>Oltre 10 anni di esperienza</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content - Logo Feature -->
+                    <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
+                        <div class="about-logo-card">
+                            <div class="about-logo-glow"></div>
+                            <div class="about-logo-content">
+                                <img src="assets/logo-duofide.png" alt="DUO FIDE Logo" class="about-logo-img">
+                                <div class="text-center mt-4">
+                                    <h3 class="fw-bold fs-4 mb-1">DUO FIDE</h3>
+                                    <p class="text-muted mb-0">Associazione Cinologica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIANZE ==================== -->
+        <section id="testimonianze" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="badge-label">Testimonianze</span>
+                    <h2 class="section-title">Cosa Dicono di Noi</h2>
+                    <p class="section-subtitle">
+                        Le esperienze dei nostri clienti e dei loro amici a quattro zampe.
+                    </p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Testimonianza 1 -->
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote testimonial-quote"></i>
+                            <div class="testimonial-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Grazie a DUO FIDE, Luna è diventata una cagnolina equilibrata e felice. Il corso di educazione base ci ha aiutato tantissimo a capire come comunicare con lei."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Francesca M.">
+                                <div>
+                                    <h4>Francesca M.</h4>
+                                    <p>Luna, Golden Retriever</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonianza 2 -->
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote testimonial-quote"></i>
+                            <div class="testimonial-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Professionisti eccezionali! Max aveva problemi comportamentali importanti e grazie al percorso personalizzato oggi è un cane completamente diverso. Consigliatissimi!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Roberto L.">
+                                <div>
+                                    <h4>Roberto L.</h4>
+                                    <p>Max, Pastore Tedesco</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonianza 3 -->
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote testimonial-quote"></i>
+                            <div class="testimonial-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Il corso di agility è fantastico! Buddy si diverte tantissimo e noi con lui. L'ambiente è accogliente e gli istruttori sono sempre disponibili e pazienti."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Giulia S.">
+                                <div>
+                                    <h4>Giulia S.</h4>
+                                    <p>Buddy, Labrador</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonianza 4 -->
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote testimonial-quote"></i>
+                            <div class="testimonial-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Abbiamo seguito il percorso completo dalla puppy class all'agility. Un'esperienza meravigliosa che ha rafforzato il nostro legame con Kira."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&h=100&fit=crop&crop=face" alt="Alessandro P.">
+                                <div>
+                                    <h4>Alessandro P.</h4>
+                                    <p>Kira, Border Collie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTATTI ==================== -->
+        <section id="contatti" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="badge-label">Contatti</span>
+                    <h2 class="section-title">Inizia il Percorso con Noi</h2>
+                    <p class="section-subtitle">
+                        Contattaci per una consulenza gratuita o per ricevere maggiori
+                        informazioni sui nostri corsi.
+                    </p>
+                </div>
+                
+                <div class="row g-5">
+                    <!-- Contact Form -->
+                    <div class="col-lg-6">
+                        <div class="contact-form-card">
+                            <h3 class="fw-bold mb-4">Scrivici un Messaggio</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Nome</label>
+                                        <input type="text" class="form-control" placeholder="Il tuo nome">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Cognome</label>
+                                        <input type="text" class="form-control" placeholder="Il tuo cognome">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" placeholder="La tua email">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Telefono</label>
+                                        <input type="tel" class="form-control" placeholder="Il tuo numero di telefono">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Messaggio</label>
+                                        <textarea class="form-control" rows="4" placeholder="Come possiamo aiutarti?"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100 shadow-brand">
+                                            Invia Messaggio
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="contact-info-card">
+                                    <div class="contact-info-icon">
+                                        <i class="bi bi-geo-alt text-primary"></i>
+                                    </div>
+                                    <h4>Indirizzo</h4>
+                                    <p>Via delle Querce, 15 - Roma (RM)</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="contact-info-card">
+                                    <div class="contact-info-icon">
+                                        <i class="bi bi-telephone text-primary"></i>
+                                    </div>
+                                    <h4>Telefono</h4>
+                                    <p>+39 06 1234567</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="contact-info-card">
+                                    <div class="contact-info-icon">
+                                        <i class="bi bi-envelope text-primary"></i>
+                                    </div>
+                                    <h4>Email</h4>
+                                    <p>info@duofide.it</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="contact-info-card">
+                                    <div class="contact-info-icon">
+                                        <i class="bi bi-clock text-primary"></i>
+                                    </div>
+                                    <h4>Orari</h4>
+                                    <p>Lun-Sab: 9:00 - 19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <!-- Logo & Description -->
+                <div class="col-md-6">
+                    <div class="footer-brand d-flex align-items-center gap-3 mb-4">
+                        <img src="assets/logo-duofide.png" alt="DUO FIDE Logo" class="footer-logo">
+                        <div>
+                            <span class="footer-brand-name">DUO FIDE</span>
+                            <p class="footer-brand-subtitle">Associazione Cinologica</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Educare per Aiutare, Aiutare per Educare. Da oltre 10 anni al
+                        fianco di proprietari e cani per costruire relazioni basate sulla
+                        fiducia e il rispetto.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-md-3">
+                    <h4 class="footer-title">Link Rapidi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servizi">Servizi</a></li>
+                        <li><a href="#chi-siamo">Chi Siamo</a></li>
+                        <li><a href="#contatti">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="col-md-3">
+                    <h4 class="footer-title">Contatti</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-telephone"></i>
+                            +39 06 1234567
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            info@duofide.it
+                        </li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>© 2025 DUO FIDE - Associazione Cinologica. Tutti i diritti riservati.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
 </html>
