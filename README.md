@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# DUO FIDE - Sito Web Associazione Cinologica
 
-## Project info
+Sito web ufficiale dell'associazione cinofila DUO FIDE di Roma.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Struttura del progetto
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+/
+├── index.html          # Pagina principale
+├── css/
+│   └── style.css       # Stili personalizzati
+├── js/
+│   └── main.js         # JavaScript
+├── assets/
+│   ├── logo-duofide.png
+│   └── hero-dog.jpg
+└── public/
+    ├── favicon.ico
+    └── robots.txt
 ```
 
-**Edit a file directly in GitHub**
+## Tecnologie utilizzate
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **HTML5** - Struttura semantica
+- **CSS3** - Stili personalizzati
+- **Bootstrap 5** - Framework CSS (via CDN)
+- **Bootstrap Icons** - Icone (via CDN)
+- **Google Fonts** - Tipografia (Inter, Poppins)
+- **JavaScript Vanilla** - Interazioni
 
-**Use GitHub Codespaces**
+## Sezioni del sito
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Header** - Navigazione fissa con menu responsive
+- **Hero** - Sezione principale con call-to-action
+- **Servizi** - 6 servizi offerti dall'associazione
+- **Chi Siamo** - Presentazione e valori
+- **Testimonianze** - Recensioni dei clienti
+- **Contatti** - Form di contatto e informazioni
+- **Footer** - Link, contatti e social
 
-## What technologies are used for this project?
+## Sviluppo locale
 
-This project is built with:
+Puoi aprire `index.html` direttamente nel browser o usare un server locale:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Con Python
+python -m http.server 8080
 
-## How can I deploy this project?
+# Con Node.js
+npx serve
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Contatti
 
-## Can I connect a custom domain to my Lovable project?
+- **Email**: info@duofide.it
+- **Telefono**: +39 06 1234567
+- **Indirizzo**: Via delle Querce, 15 - Roma (RM)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2025 DUO FIDE - Associazione Cinologica
