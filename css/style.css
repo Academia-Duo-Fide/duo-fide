@@ -658,6 +658,13 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
 }
 
+/* ==================== CHIAMACI BUTTON ==================== */
+@media (min-width: 768px) {
+    .btn-chiamaci {
+        display: none !important;
+    }
+}
+
 /* ==================== UTILITIES ==================== */
 .hover-lift {
     transition: all 0.3s ease;
