@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-fixed .navbar {
-    padding: 0.75rem 0;
+    padding: 0.15rem 0;
 }
 
 .logo-img {
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 768px) {
     .logo-img {
-        height: 56px;
+        height: 85px;
     }
 }
 
@@ -529,7 +529,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo {
-    height: 4rem;
+    height: 9rem;
     width: auto;
     background-color: var(--background);
     border-radius: 50%;
@@ -539,20 +539,21 @@ h1, h2, h3, h4, h5, h6 {
 .footer-brand-name {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 4rem;
     display: block;
 }
 
 .footer-brand-subtitle {
-    font-size: 0.875rem;
+    font-size: 1rem;
     opacity: 0.7;
     margin-bottom: 0;
 }
 
 .footer-description {
     opacity: 0.7;
-    line-height: 1.75;
+    line-height: 2;
     max-width: 28rem;
+    font-size: 1.25rem;
 }
 
 .footer-title {
