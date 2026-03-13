@@ -441,30 +441,31 @@
                     <div class="col-lg-6">
                         <div class="contact-form-card">
                             <h3 class="fw-bold mb-4">Scrivici un Messaggio</h3>
-                            <form>
+                            <form id="contact-form">
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" placeholder="Il tuo nome">
+                                        <input type="text" class="form-control" name="from_name" placeholder="Il tuo nome" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label class="form-label">Cognome</label>
-                                        <input type="text" class="form-control" placeholder="Il tuo cognome">
+                                        <input type="text" class="form-control" name="from_surname" placeholder="Il tuo cognome" required>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" placeholder="La tua email">
+                                        <input type="email" class="form-control" name="reply_to" placeholder="La tua email" required>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Telefono</label>
-                                        <input type="tel" class="form-control" placeholder="Il tuo numero di telefono">
+                                        <input type="tel" class="form-control" name="phone" placeholder="Il tuo numero di telefono">
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Messaggio</label>
-                                        <textarea class="form-control" rows="4" placeholder="Come possiamo aiutarti?"></textarea>
+                                        <textarea class="form-control" rows="4" name="message" placeholder="Come possiamo aiutarti?" required></textarea>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary btn-lg w-100 shadow-brand">
+                                        <div id="form-status" style="display:none;" class="alert mb-3"></div>
+                                        <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg w-100 shadow-brand">
                                             Invia Messaggio
                                         </button>
                                     </div>
@@ -582,6 +583,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
