@@ -574,17 +574,43 @@
             <div class="footer-bottom">
                 <p>© 2025 Academia DUO FIDE ASD APS - Associazione Cinologica. Tutti i diritti riservati.</p>
                 <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display:none;">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <i class="bi bi-shield-lock me-2"></i>
+                <p>Questo sito utilizza cookie tecnici necessari al funzionamento e servizi di terze parti. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="btn btn-outline-light btn-sm" onclick="setCookieConsent('rejected')">Rifiuta</button>
+                <button class="btn btn-primary btn-sm" onclick="setCookieConsent('accepted')">Accetta</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        (function() {
+            var consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        })();
+        function setCookieConsent(value) {
+            localStorage.setItem('cookie_consent', value);
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
