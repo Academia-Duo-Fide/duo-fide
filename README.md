@@ -1,6 +1,6 @@
 # DUO FIDE - Sito Web Associazione Cinologica
 
-Sito web ufficiale dell'associazione cinofila DUO FIDE di Torino.
+Sito web ufficiale dell'associazione cinofila Academia Duo Fide di Torino.
 
 ## Struttura del progetto
 
@@ -52,9 +52,7 @@ npx serve
 
 ## Contatti
 
-- **Email**: info@duofide.it
-- **Telefono**: +39 06 1234567
-- **Indirizzo**: Via delle Querce, 15 - Torino (TO)
+- **Email**: duofide@gmail.com
 
 ---
 
