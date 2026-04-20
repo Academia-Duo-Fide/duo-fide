@@ -656,12 +656,14 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
     max-width: 100%;
     font-size: 1rem;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .footer-description {
         max-width: 28rem;
         font-size: 1.1rem;
+        text-align: left;
     }
 }
 
