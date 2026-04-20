@@ -1,6 +1,6 @@
 # Academia DUO FIDE — Sito Web Ufficiale
 
-Sito web ufficiale dell' **Academia DUO FIDE - Associazione Cinologica ASD APS** di Torino.  
+Sito web ufficiale dell' **Associazione Cinologica - Academia DUO FIDE asd aps** di Torino.  
 Motto: *Educare per Aiutare, Aiutare per Educare.*
 
 🌐 **Live:** [https://duofide.it](https://duofide.it)  
@@ -207,4 +207,4 @@ git push origin main
 
 ---
 
-© 2026 Academia DUO FIDE ASD APS — Associazione Cinologica. Tutti i diritti riservati.
+© 2026 Associazione Cinologica - Academia DUO FIDE asd aps. Tutti i diritti riservati.
