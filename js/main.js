@@ -153,4 +153,123 @@ document.addEventListener('DOMContentLoaded', function () {
             : 'none';
     }
     window.addEventListener('scroll', handleHeaderScroll);
+    // ==================== COLLABORAZIONI CAROUSEL ====================
+    (function () {
+        const track    = document.getElementById('collab-track');
+        const dotsWrap = document.getElementById('collab-dots');
+        const btnPrev  = document.getElementById('collab-prev');
+        const btnNext  = document.getElementById('collab-next');
+        if (!track) return;
+
+        /* ---- 1. Clone slides for seamless loop ---- */
+        const originals = Array.from(track.children);
+        const total     = originals.length;
+
+        originals.forEach(s => track.appendChild(s.cloneNode(true)));
+        [...originals].reverse().forEach(s => track.insertBefore(s.cloneNode(true), track.firstChild));
+
+        /* ---- 2. State ---- */
+        let currentIndex = total;
+        let offset       = 0;
+        let autoTimer    = null;
+        let isAnimating  = false;
+        let paused       = false;
+
+        function getSlideWidth() {
+            return track.children[0].offsetWidth;
+        }
+        function getGapPx() {
+            return parseFloat(getComputedStyle(track).gap) || 24;
+        }
+        function getViewportWidth() {
+            // Width of the visible carousel area (the viewport element)
+            return track.parentElement.offsetWidth;
+        }
+        function slideOffset(index) {
+            const w  = getSlideWidth();
+            const g  = getGapPx();
+            const vw = getViewportWidth();
+            // Center the active slide in the viewport
+            const centeringOffset = (vw / 2) - (w / 2);
+            return -(index * (w + g)) + centeringOffset;
+        }
+
+        /* ---- 3. Render ---- */
+        function applyOffset(px, withTransition) {
+            track.style.transition = withTransition ? 'transform 0.45s cubic-bezier(0.4,0,0.2,1)' : 'none';
+            track.style.transform  = 'translateX(' + px + 'px)';
+        }
+
+        function jumpTo(index) {
+            currentIndex = index;
+            offset = slideOffset(index);
+            applyOffset(offset, false);
+        }
+
+        function goTo(index, animate) {
+            if (isAnimating) return;
+            isAnimating = true;
+            currentIndex = index;
+            offset = slideOffset(index);
+            applyOffset(offset, animate !== false);
+            updateDots();
+            setTimeout(() => {
+                if (currentIndex >= total * 2) jumpTo(total);
+                if (currentIndex < total)      jumpTo(total * 2 - 1);
+                isAnimating = false;
+            }, 470);
+        }
+
+        function goNext() { goTo(currentIndex + 1, true); }
+        function goPrev() { goTo(currentIndex - 1, true); }
+
+        /* ---- 4. Dots ---- */
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'collab-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', () => { goTo(total + i, true); resetAuto(); });
+            dotsWrap.appendChild(dot);
+        }
+
+        function updateDots() {
+            const realIndex = ((currentIndex - total) % total + total) % total;
+            dotsWrap.querySelectorAll('.collab-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === realIndex);
+            });
+            // Highlight active slide
+            Array.from(track.children).forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        /* ---- 5. Arrows ---- */
+        if (btnPrev) btnPrev.addEventListener('click', () => { goPrev(); resetAuto(); });
+        if (btnNext) btnNext.addEventListener('click', () => { goNext(); resetAuto(); });
+
+        /* ---- 6. Auto-play ---- */
+        function startAuto() {
+            autoTimer = setInterval(() => { if (!paused) goNext(); }, 3000);
+        }
+        function resetAuto() {
+            clearInterval(autoTimer);
+            startAuto();
+        }
+
+        track.addEventListener('mouseenter', () => { paused = true; });
+        track.addEventListener('mouseleave', () => { paused = false; });
+
+        /* ---- 7. Recalculate on resize ---- */
+        window.addEventListener('resize', () => {
+            applyOffset(slideOffset(currentIndex), false);
+        });
+
+        /* ---- 8. Init ---- */
+        applyOffset(slideOffset(currentIndex), false);
+        updateDots();
+        startAuto();
+
+    })();
+
+
 });
