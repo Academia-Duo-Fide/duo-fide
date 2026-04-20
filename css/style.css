@@ -39,6 +39,7 @@
 /* ==================== BASE ==================== */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -46,6 +47,12 @@ body {
     color: var(--foreground);
     background-color: var(--background);
     line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 /* ==================== TYPOGRAPHY ==================== */
@@ -267,7 +274,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ==================== SECTIONS ==================== */
 .section-padding {
-    padding: var(--section-padding) 0;
+    padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding: var(--section-padding) 0;
+    }
 }
 
 .bg-light {
@@ -310,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card {
     background: var(--card);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.25rem;
     box-shadow: var(--shadow-lg);
     border: none;
     height: 100%;
@@ -321,6 +334,12 @@ h1, h2, h3, h4, h5, h6 {
 .service-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .service-card {
+        padding: 2rem;
+    }
 }
 
 .service-icon {
@@ -389,13 +408,20 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--card);
     border-radius: var(--radius-xl);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    padding: 3rem;
+    padding: 1.5rem;
     border: 1px solid var(--border);
 }
 
+@media (min-width: 768px) {
+    .about-logo-content {
+        padding: 3rem;
+    }
+}
+
 .about-logo-img {
-    width: 18rem;
-    height: 18rem;
+    width: 100%;
+    max-width: 18rem;
+    height: auto;
     object-fit: contain;
 }
 
@@ -403,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
 .testimonial-card {
     background: var(--card);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.25rem;
     border: 1px solid var(--border);
     position: relative;
     height: 100%;
@@ -413,6 +439,12 @@ h1, h2, h3, h4, h5, h6 {
 .testimonial-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .testimonial-card {
+        padding: 2rem;
+    }
 }
 
 .testimonial-quote {
@@ -468,8 +500,14 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--card);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    padding: 2rem;
+    padding: 1.25rem;
     border: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+    .contact-form-card {
+        padding: 2rem;
+    }
 }
 
 .form-label {
@@ -552,12 +590,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo {
-    height: 9rem;
+    height: 5rem;
     width: auto;
     background-color: var(--background);
     border-radius: 50%;
     padding: 0.25rem;
     flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .footer-logo {
+        height: 9rem;
+    }
 }
 
 .footer-brand-name {
@@ -578,8 +622,14 @@ h1, h2, h3, h4, h5, h6 {
 .footer-description {
     opacity: 0.7;
     line-height: 2;
-    max-width: 28rem;
+    max-width: 100%;
     font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .footer-description {
+        max-width: 28rem;
+    }
 }
 
 .footer-title {
