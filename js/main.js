@@ -16,7 +16,7 @@ const SEDI = [
         orari: "Tutti i giorni su appuntamento",
         telefono: null,
         email: null,
-        mapsLink: "https://www.google.com/maps/place/Oratorio+Parrocchia+Sant'Antonio+Abate/@45.1139528,7.6605694,17z",
+        mapsLink: "https://www.google.com/maps/dir/?api=1&destination=45.1139528,7.6605694&destination_place_id=ChIJRUNJ5CtshhIRpAJfjf3n3uw",
         embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.4!2d7.6605694!3d45.1139528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886c2be4494345%3A0xecdee7ad8d5f02a4!2sOratorio%20Parrocchia%20Sant'Antonio%20Abate!5e0!3m2!1sit!2sit!4v1"
     },
     /* -- ESEMPIO NUOVA SEDE: rimuovi i delimitatori e compila --
@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ==================== EMAIL JS ====================
+    // SICUREZZA: configurare "Allowed Origins" su dashboard EmailJS
+    // limitando a https://duofide.it per prevenire uso non autorizzato della chiave.
+    // Abilitare anche il rate limiting dal pannello EmailJS.
     emailjs.init('9lYv2RyPa_o16Li6O');
 
     const contactForm = document.getElementById('contact-form');
@@ -93,6 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+
+            // ---- Honeypot anti-spam check ----
+            if (contactForm['_honeypot'] && contactForm['_honeypot'].value !== '') {
+                // Bot detected — silently ignore
+                return;
+            }
             submitBtn.disabled = true;
             submitBtn.textContent = 'Invio in corso...';
             formStatus.style.display = 'none';
