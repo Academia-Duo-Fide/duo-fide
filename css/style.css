@@ -166,14 +166,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    border: 2px solid var(--border);
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius);
     color: var(--foreground);
+    background-color: transparent;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+    box-shadow: 0 0 0 3px var(--primary-light);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(20, 20, 20, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .nav-link {
