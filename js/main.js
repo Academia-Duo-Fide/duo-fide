@@ -83,18 +83,13 @@ document.addEventListener('DOMContentLoaded', function () {
         selectSede(SEDI[0].id);
     }
 
-    // ==================== EMAIL JS ====================
-    // SICUREZZA: configurare "Allowed Origins" su dashboard EmailJS
-    // limitando a https://duofide.it per prevenire uso non autorizzato della chiave.
-    // Abilitare anche il rate limiting dal pannello EmailJS.
-    emailjs.init('9lYv2RyPa_o16Li6O');
-
+    // ==================== CONTACT FORM (Cloudflare Worker + Resend) ====================
     const contactForm = document.getElementById('contact-form');
     const formStatus  = document.getElementById('form-status');
     const submitBtn   = document.getElementById('form-submit-btn');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // ---- Honeypot anti-spam check ----
@@ -102,27 +97,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Bot detected — silently ignore
                 return;
             }
+
             submitBtn.disabled = true;
             submitBtn.textContent = 'Invio in corso...';
             formStatus.style.display = 'none';
 
-            emailjs.sendForm('service_23r66p3', 'template_uqeahrb', contactForm)
-                .then(function () {
+            try {
+                const res = await fetch('https://duofide-mailer.duofide.workers.dev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nome:      contactForm['nome'].value,
+                        email:     contactForm['email'].value,
+                        messaggio: contactForm['messaggio'].value,
+                    }),
+                });
+
+                if (res.ok) {
                     formStatus.className = 'alert alert-success mb-3';
                     formStatus.textContent = 'Messaggio inviato con successo! Ti risponderemo al più presto.';
                     formStatus.style.display = 'block';
                     contactForm.reset();
-                })
-                .catch(function (error) {
+                } else {
                     formStatus.className = 'alert alert-danger mb-3';
                     formStatus.textContent = "Errore nell'invio. Riprova più tardi o contattaci telefonicamente.";
                     formStatus.style.display = 'block';
-                    console.error('EmailJS error:', error);
-                })
-                .finally(function () {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Invia Messaggio';
-                });
+                }
+            } catch (err) {
+                formStatus.className = 'alert alert-danger mb-3';
+                formStatus.textContent = "Errore di rete. Riprova più tardi o contattaci telefonicamente.";
+                formStatus.style.display = 'block';
+                console.error('Fetch error:', err);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Invia Messaggio';
+            }
         });
     }
 
