@@ -107,9 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        nome:      contactForm['nome'].value,
-                        email:     contactForm['email'].value,
-                        messaggio: contactForm['messaggio'].value,
+                        nome:      contactForm['from_name'].value,
+                        cognome:   contactForm['from_surname'].value,
+                        email:     contactForm['reply_to'].value,
+                        telefono:  contactForm['phone'] ? contactForm['phone'].value : '',
+                        messaggio: contactForm['message'].value,
                     }),
                 });
 
